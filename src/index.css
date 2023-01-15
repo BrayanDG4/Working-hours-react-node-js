@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+    .space-between {
+        justify-content: space-between;
+    }
+
+    .link{
+        @apply hover:text-slate-500 transition-all;
+    }
+    
+    .button-1{
+        @apply text-white px-3 py-2 font-bold rounded-md text-2xl
+    }
+
+    .button-2{
+        @apply text-white px-5 py-4 font-bold rounded-md text-3xl
+    }
+
+    .button-transition{
+        @apply hover:bg-cyan-600 transition-all;
+    }
+
+    .card{
+        @apply green-option-2 border p-12 rounded-md shadow-md mb-3;
+    }
+
+    .card-tittle{
+        @apply uppercase font-bold text-xl gray-text mb-4;
+    }
+
+    .card-description{
+        @apply font-semibold text-sm gray-text;
+    }
+
+    .cyan-option-1{
+        background-color: #00BFBA;
+    }
+
+    .green-option-1{
+        background-color: #4DDBAE;
+    }
+
+    .green-option-2{
+        background-color: #F8FFFF;
+    }
+
+    .gray-text{
+        color: #4C4C4C;
+    }
+}
+
