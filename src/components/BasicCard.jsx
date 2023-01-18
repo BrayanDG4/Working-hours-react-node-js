@@ -1,7 +1,7 @@
 export const BasicCard = () => {
   return (
     <div className="container mx-auto py-8">
-      <div className="grid grid-cols-1 md:grid-cols-4 md:gap-2 mx-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 mx-2">
         <div className="card">
           <div className="">
             <h3 className="card-tittle">

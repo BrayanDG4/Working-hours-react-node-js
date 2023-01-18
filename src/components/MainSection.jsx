@@ -3,7 +3,7 @@ import { ButtonRightNow } from "./ButtonRightNow";
 
 export const MainSection = () => {
   return (
-    <section className="container mx-auto px-4">
+    <section className="container mx-auto px-4 h-screen">
       <div className="md:flex md:flex-row-reverse md:gap-10">
 
         <div className="w-11/12 md:w-10/12 xl:w-6/12 xl:ml-52 mt-16 mx-auto">

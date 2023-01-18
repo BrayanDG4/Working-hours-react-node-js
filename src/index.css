@@ -32,7 +32,7 @@
     }
 
     .card-description{
-        @apply font-semibold text-sm gray-text;
+        @apply font-semibold text-base gray-text;
     }
 
     .cyan-option-1{
@@ -49,6 +49,10 @@
 
     .gray-text{
         color: #4C4C4C;
+    }
+
+    .clip-path{
+        clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
     }
 }
 
