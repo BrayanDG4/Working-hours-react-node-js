@@ -1,5 +1,5 @@
 import mainImage from "../assets/main.png";
-import { ButtonRightNow } from "./ButtonRightNow";
+import { ButtonRightNow } from "./buttons/ButtonRightNow";
 
 export const MainSection = () => {
   return (

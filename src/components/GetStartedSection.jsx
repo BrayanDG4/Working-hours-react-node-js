@@ -1,4 +1,4 @@
-import { ButtonRightNow } from "./ButtonRightNow";
+import { ButtonRightNow } from "./buttons/ButtonRightNow";
 
 export const GetStartedSection = () => {
   return (
