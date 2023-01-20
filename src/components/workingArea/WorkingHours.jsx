@@ -1,4 +1,4 @@
-import {UserCards} from './cards/UserCards';
+import { UserCards } from "./cards/UserCards";
 
 export const WorkingHours = () => {
   return (
@@ -12,7 +12,7 @@ export const WorkingHours = () => {
           </div>
         </div>
 
-        <UserCards/>
+        <UserCards />
         
       </div>
 
@@ -26,6 +26,13 @@ export const WorkingHours = () => {
           <div className="font-medium gray-text p-2">Sabado</div>
           <div className="font-medium gray-text p-2">Domingo</div>
         </div>
+
+        <div className="grid grid-cols-7 grow">
+          <div className="gray-text grow px-3 py-2 font-bold rounded-md bg-green-400 m-2">
+            6:00 AM a 12:00 PM
+          </div>
+        </div>
+        
       </div>
     </div>
   );

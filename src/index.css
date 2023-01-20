@@ -67,6 +67,23 @@
         color: #989898;
     }
 
+    .overlay{
+        @apply flex w-full h-screen fixed top-0 left-0 p-40 items-center justify-center;
+    }
+
+    .close-icon{
+        @apply absolute text-2xl w-8 text-center top-16 right-16 cursor-pointer transition-all rounded-sm hover:green-option-1;
+    }
+
+    .glass{
+        background: rgba( 255, 255, 255, 0.5 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 7px );
+        -webkit-backdrop-filter: blur( 7px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
     .clip-path{
         clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
     }

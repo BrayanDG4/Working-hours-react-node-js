@@ -1,18 +1,22 @@
 import { ToolBar } from "./ToolBar";
-import { Calendar } from "./Calendar";
-import {WorkingHours} from './WorkingHours';
+import { useState } from "react";
+import { WorkingHours } from "./WorkingHours";
+import { AddUserModal } from "./modals/AddUserModal";
+import {UserForm} from './forms/UserForm'
 
-const nameMonth = () => {
-  let currentMonth = new Intl.DateTimeFormat("es-ES", { month: "long" }).format(
-    new Date()
-  );
+const getNameMonth = () => {
+  let currentMonth = new Intl.DateTimeFormat("es-ES", { month: "long" })
+    .format(new Date())
+    .toUpperCase();
 
-  return `${currentMonth} ${new Date().getDate()}`;
+  return currentMonth;
 };
 
 export const WorkingArea = () => {
+  const [modal1, setModal1] = useState(false);
+
   return (
-    <section className="">
+    <section className="h-screen w-full">
       <ToolBar />
       <div className="h-screen bg-gray-50">
         <div className="container mx-auto px-2 pt-8">
@@ -23,13 +27,13 @@ export const WorkingArea = () => {
 
               <div className="button-3 gray-text bg-gray-100 text-xl">
                 <p>
-                  Enero <span>2023</span>
+                  {getNameMonth()} <span>2023</span>
                 </p>
               </div>
             </div>
 
             <div>
-              <button className="button-4 bg-green-500 hover:bg-green-600 transition-all">
+              <button onClick={()=>{setModal1(!modal1)}} className="button-4 bg-green-500 hover:bg-green-600 transition-all">
                 Agregar usuario
               </button>
             </div>
@@ -42,8 +46,11 @@ export const WorkingArea = () => {
           </div>
           {/*end Selected counter */}
 
-          <WorkingHours/>
-          
+          <WorkingHours />
+
+          <AddUserModal modal={modal1} setModal={setModal1}>
+            <UserForm/>
+          </AddUserModal>
         </div>
       </div>
     </section>
