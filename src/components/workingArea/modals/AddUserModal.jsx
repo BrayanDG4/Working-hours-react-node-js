@@ -7,7 +7,7 @@ export const AddUserModal = ({ children, modal, setModal }) => {
         // Overlay
         <div className="overlay">
           {/* ContenedorModal */}
-          <div className="w-2/3 relative p-16 glass">
+          <div className="w-2/3 relative p-16 glass h-screen my-10 overflow-scroll">
             {/* EncabezadoModal */}
             <div className="flex items-center space-between mb-20">
               <h3 className="font-bold text-3xl gray-text">Agregar usuario</h3>
