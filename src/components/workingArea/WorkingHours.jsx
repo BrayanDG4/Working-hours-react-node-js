@@ -1,6 +1,24 @@
+import { useState, useEffect } from "react";
 import { UserCards } from "./cards/UserCards";
 
 export const WorkingHours = () => {
+  const [workingHours, setWorkingHours] = useState([]);
+
+  useEffect(() => {
+    setWorkingHours([
+      {
+        id: 1,
+        startTime: 6,
+        endTime: 12,
+      },
+      {
+        id: 1,
+        startTime: 12,
+        endTime: 9,
+      },
+    ]);
+  }, []);
+
   return (
     // WorkingHours
     <div className="grid grid-cols-12 gap-2 mt-2">
@@ -13,7 +31,6 @@ export const WorkingHours = () => {
         </div>
 
         <UserCards />
-        
       </div>
 
       <div className="bg-white col-span-9 p-2">
@@ -27,12 +44,19 @@ export const WorkingHours = () => {
           <div className="font-medium gray-text p-2">Domingo</div>
         </div>
 
-        <div className="grid grid-cols-7 grow">
-          <div className="gray-text grow px-3 py-2 font-bold rounded-md bg-green-400 m-2">
-            6:00 AM a 12:00 PM
-          </div>
+        <div className="grid grid-cols-7">
+          {workingHours.map((hours, id) => {
+            console.log(hours);
+            return (
+              <div
+                key={id}
+                className="gray-text grow px-3 py-2 font-bold rounded-md bg-green-400 m-2"
+              >
+                {hours.startTime} A {hours.endTime}
+              </div>
+            );
+          })}
         </div>
-        
       </div>
     </div>
   );

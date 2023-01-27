@@ -6,8 +6,8 @@ export const UserCards = (props) => {
           <input className="w-5 h-5" type="checkbox" name="" id="" />
         </div>
         <div className="overflow-hidden">
-          <p className="font-bold gray-text">Brayan Gómez</p>
-          <span>Ingeniero</span>
+          <p className="font-bold gray-text">EncoDev</p>
+          <span>Guerrero educado</span>
         </div>
       </div>
     </div>

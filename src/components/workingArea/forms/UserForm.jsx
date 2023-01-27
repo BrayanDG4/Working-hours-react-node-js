@@ -1,17 +1,72 @@
 import { Form, Formik } from "formik";
+import { useState } from "react";
 
-export const UserForm = () => {
+export const UserForm = ({ getInfo }) => {
   return (
     <>
       <Formik
         initialValues={{
           name: "",
           rol: "",
-          startTime: "",
-          endTime: "",
+          // startTimeMonday: "",
+          // startTimeTuesday: "",
+          // startTimeWednesday: "",
+          // startTimeThursday: "",
+          // startTimeFriday: "",
+          // startTimmeSaturday: "",
+          // startTimeSunday: "",
+          // endTimeMonday: "",
+          // endTimeTuesday: "",
+          // endTimeWednesday: "",
+          // endTimeThursday: "",
+          // endTimeFriday: "",
+          // endTimmeSaturday: "",
+          // endTimeSunday: "",
         }}
         onSubmit={(values) => {
           console.log(values);
+          let info = {
+            name: values.name,
+            rol: values.rol,
+            hours: [
+              {
+                id: 1,
+                startTime: values.startTimeMonday,
+                endTime: values.endTimeMonday,
+              },
+              {
+                id: 1,
+                startTime: values.startTimeTuesday,
+                endTime: values.endTimeTuesday,
+              },
+              {
+                id: 1,
+                startTime: values.startTimeWednesday,
+                endTime: values.endTimeWednesday,
+              },
+              {
+                id: 1,
+                startTime: values.startTimeThursday,
+                endTime: values.endTimeThursday,
+              },
+              {
+                id: 1,
+                startTime: values.startTimeFriday,
+                endTime: values.endTimeFriday,
+              },
+              {
+                id: 1,
+                startTime: values.startTimeSaturday,
+                endTime: values.endTimeSaturday,
+              },
+              {
+                id: 1,
+                startTime: values.startTimeSunday,
+                endTime: values.endTimeSunday,
+              }
+            ],
+          };
+          getInfo(info);
         }}
       >
         {({ handleChange, handleSubmit }) => (
@@ -50,38 +105,242 @@ export const UserForm = () => {
               />
             </div>
 
-            <div className="mb-5">
+            <div className="mb-5 flex gap-5 items-center">
               <label
-                htmlFor="startTime"
+                htmlFor="startTimeMonday"
                 className="mb-2 block uppercase text-gray-700 font-bold"
               >
-                Hora de ingreso:
+                Lunes:
               </label>
-              <input
-                onChange={handleChange}
-                name="startTime"
-                type="text"
-                id="startTime"
-                placeholder="Ingresar hora de entrada"
-                className="border p-3 w-full rounded-lg opacity-70"
-              />
+              <div className="flex gap-2 items-center ml-10">
+                <input
+                  onChange={handleChange}
+                  name="startTimeMonday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeMonday"
+                  placeholder="Inicio"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+
+                <p>A</p>
+
+                <input
+                  onChange={handleChange}
+                  name="endTimeMonday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="endTimeMonday"
+                  placeholder="Fin"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+              </div>
             </div>
 
-            <div className="mb-5">
+            <div className="mb-5 flex gap-5 items-center">
               <label
-                htmlFor="endTime"
+                htmlFor="startTimeTuesday"
                 className="mb-2 block uppercase text-gray-700 font-bold"
               >
-                Hora de salida:
+                Martes:
               </label>
-              <input
-                onChange={handleChange}
-                name="endTime"
-                type="text"
-                id="endTime"
-                placeholder="Ingresar hora de salida"
-                className="border p-3 w-full rounded-lg opacity-70"
-              />
+              <div className="flex gap-2 items-center ml-6">
+                <input
+                  onChange={handleChange}
+                  name="startTimeTuesday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeTuesday"
+                  placeholder="Inicio"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+
+                <p>A</p>
+
+                <input
+                  onChange={handleChange}
+                  name="endTimeTuesday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="endTimeTuesday"
+                  placeholder="Fin"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+              </div>
+            </div>
+
+            <div className="mb-5 flex gap-5 items-center">
+              <label
+                htmlFor="startTimeWednesday"
+                className="mb-2 block uppercase text-gray-700 font-bold"
+              >
+                Miercoles:
+              </label>
+              <div className="flex gap-2 items-center">
+                <input
+                  onChange={handleChange}
+                  name="startTimeWednesday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeWednesday"
+                  placeholder="Inicio"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+
+                <p>A</p>
+
+                <input
+                  onChange={handleChange}
+                  name="startTimeWednesday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeWednesday"
+                  placeholder="Fin"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+              </div>
+            </div>
+
+            <div className="mb-5 flex gap-5 items-center">
+              <label
+                htmlFor="startTimeThursday"
+                className="mb-2 block uppercase text-gray-700 font-bold"
+              >
+                Jueves:
+              </label>
+              <div className="flex gap-2 items-center ml-8">
+                <input
+                  onChange={handleChange}
+                  name="startTimeThursday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeThursday"
+                  placeholder="Inicio"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+
+                <p>A</p>
+
+                <input
+                  onChange={handleChange}
+                  name="startTimeThursday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeThursday"
+                  placeholder="Fin"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+              </div>
+            </div>
+
+            <div className="mb-5 flex gap-5 items-center">
+              <label
+                htmlFor="startTimeFriday"
+                className="mb-2 block uppercase text-gray-700 font-bold"
+              >
+                Viernes:
+              </label>
+              <div className="flex gap-2 items-center ml-6">
+                <input
+                  onChange={handleChange}
+                  name="startTimeFriday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeFriday"
+                  placeholder="Inicio"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+
+                <p>A</p>
+
+                <input
+                  onChange={handleChange}
+                  name="startTimeFriday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeFriday"
+                  placeholder="Fin"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+              </div>
+            </div>
+
+            <div className="mb-5 flex gap-5 items-center">
+              <label
+                htmlFor="startTimeSaturday"
+                className="mb-2 block uppercase text-gray-700 font-bold"
+              >
+                Sábado:
+              </label>
+              <div className="flex gap-2 items-center ml-6">
+                <input
+                  onChange={handleChange}
+                  name="startTimeSaturday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeSaturday"
+                  placeholder="Inicio"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+
+                <p>A</p>
+
+                <input
+                  onChange={handleChange}
+                  name="startTimeSaturday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeSaturday"
+                  placeholder="Fin"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+              </div>
+            </div>
+
+            <div className="mb-5 flex gap-5 items-center">
+              <label
+                htmlFor="startTimeSunday"
+                className="mb-2 block uppercase text-gray-700 font-bold"
+              >
+                Domingo:
+              </label>
+              <div className="flex gap-2 items-center ml-3">
+                <input
+                  onChange={handleChange}
+                  name="startTimeSunday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeSunday"
+                  placeholder="Inicio"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+
+                <p>A</p>
+
+                <input
+                  onChange={handleChange}
+                  name="endTimeSunday"
+                  type="number"
+                  min={0}
+                  max={24}
+                  id="startTimeSunday"
+                  placeholder="Fin"
+                  className="border p-3 w-full rounded-lg opacity-70"
+                />
+              </div>
             </div>
 
             <button

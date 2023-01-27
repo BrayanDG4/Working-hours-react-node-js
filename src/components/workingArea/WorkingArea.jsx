@@ -2,7 +2,7 @@ import { ToolBar } from "./ToolBar";
 import { useState } from "react";
 import { WorkingHours } from "./WorkingHours";
 import { AddUserModal } from "./modals/AddUserModal";
-import {UserForm} from './forms/UserForm'
+import { UserForm } from "./forms/UserForm";
 
 const getNameMonth = () => {
   let currentMonth = new Intl.DateTimeFormat("es-ES", { month: "long" })
@@ -15,6 +15,14 @@ const getNameMonth = () => {
 export const WorkingArea = () => {
   const [modal1, setModal1] = useState(false);
 
+  const [data, setData] = useState([]);
+
+  const getInfo = (data) => {
+    setData(data);
+  };
+  console.log(
+     "desde area de trabajo" + data.name + data.rol + data.startTime
+   );
   return (
     <section className="h-screen w-full">
       <ToolBar />
@@ -33,7 +41,12 @@ export const WorkingArea = () => {
             </div>
 
             <div>
-              <button onClick={()=>{setModal1(!modal1)}} className="button-4 bg-green-500 hover:bg-green-600 transition-all">
+              <button
+                onClick={() => {
+                  setModal1(!modal1);
+                }}
+                className="button-4 bg-green-500 hover:bg-green-600 transition-all"
+              >
                 Agregar usuario
               </button>
             </div>
@@ -46,10 +59,10 @@ export const WorkingArea = () => {
           </div>
           {/*end Selected counter */}
 
-          <WorkingHours />
+          <WorkingHours data={data} />
 
           <AddUserModal modal={modal1} setModal={setModal1}>
-            <UserForm/>
+            <UserForm getInfo={getInfo} />
           </AddUserModal>
         </div>
       </div>
